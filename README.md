@@ -17,7 +17,8 @@ Simple example:
 int main() {
     double targetCondition = 1000;
     float proportionalGain, integralGain, derivativeGain = 0.1;
-    PIDController pid (targetCondition, proportionalGain, integralGain, derivativeGain);
+    float timeDelta = 0.01;
+    PIDController pid (targetCondition, proportionalGain, integralGain, derivativeGain, timeDelta);
 
     double currentCondition = yourModel.getData();
     double controllAction = pid.compute(currentCondition);
